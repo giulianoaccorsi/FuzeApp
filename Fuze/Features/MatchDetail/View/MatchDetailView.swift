@@ -13,6 +13,7 @@ protocol MatchDetailViewLogic: UIView {
                     leagueName: String,
                     matchDate: String,
                     opponents: Opponents)
+    func stopLoading()
 }
 
 protocol MatchDetailViewDelegate: AnyObject {
@@ -26,6 +27,7 @@ final class MatchDetailView: UIView, MatchDetailViewLogic {
         let view = UIActivityIndicatorView(style: .large)
         view.color = .white
         view.startAnimating()
+        view.hidesWhenStopped = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -103,6 +105,12 @@ final class MatchDetailView: UIView, MatchDetailViewLogic {
         matchName.text = leagueName
         dataSource.players = matches
         showUI()
+    }
+
+    func stopLoading() {
+        DispatchQueue.main.async {
+            self.indicatorView.stopAnimating()
+        }
     }
 
     @objc

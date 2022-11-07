@@ -112,5 +112,12 @@ extension MatchesDataSource: UITableViewDelegate, UITableViewDataSource {
         }
         return indexPath
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 1 {
+            return 80
+        }
+        return tableView.rowHeight
+    }
 }
 

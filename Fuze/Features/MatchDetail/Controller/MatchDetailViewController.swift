@@ -57,7 +57,8 @@ extension MatchDetailViewController: MatchDetailViewDelegate {
 
 extension MatchDetailViewController: MatchDetailViewControllerDisplayable {
     func displayError(error: ServiceError) {
-        //
+        showError(errorMessage: error.localizedDescription)
+        matchDetailView.stopLoading()
     }
 
     func displayMatches(matches: [MatchDetailCellViewModel], leagueName: String, matchDate: String, opponents: Opponents) {

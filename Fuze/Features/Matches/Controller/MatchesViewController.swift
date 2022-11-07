@@ -47,7 +47,7 @@ final class MatchesViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .darkBlue
-        self.title = "Partidas"
+        self.title = .matches
     }
 }
 
@@ -57,6 +57,7 @@ extension MatchesViewController: MatchesViewControllerDisplayable {
     }
 
     func displayError(error: ServiceError) {
+        showError(errorMessage: error.localizedDescription)
     }
 
     func displayMatches(matches: [MatchCellViewModel]) {

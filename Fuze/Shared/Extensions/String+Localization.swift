@@ -8,4 +8,5 @@
 import Foundation
 extension String {
     static let running = NSLocalizedString("RUNNING", comment: "")
+    static let matches = NSLocalizedString("MATCHES", comment: "")
 }
