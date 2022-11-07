@@ -12,11 +12,15 @@ A iOS application with layout based on [Figma](https://www.figma.com/file/OeNVxV
      title="App" width="220  " height="476">
 
 * MVVM
-* Coordinator
-* Factory
+* Coordinator Pattern
+* Factory Pattern
 * Infinity Scroll
 * View Code (UIKit)
 * Internationalization (English and PT-Br)
+* Swift Package Manager 
+* Using new async/await feature 
+* Time based on device region 
+* URLSession 
 
 ### Prerequisites
 
