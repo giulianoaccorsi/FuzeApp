@@ -25,8 +25,8 @@ final class OpponentsView: UIView {
 
     private let firstTeamLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .title
-        label.font = .title
+        label.textColor = .labels
+        label.font = .robotoRegular10
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 2
@@ -36,8 +36,8 @@ final class OpponentsView: UIView {
 
     private let secondTeamLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .title
-        label.font = .title
+        label.textColor = .labels
+        label.font = .robotoRegular10
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.numberOfLines = 2
@@ -49,7 +49,7 @@ final class OpponentsView: UIView {
         let stack = UIStackView(arrangedSubviews: [firstTeamImage, firstTeamLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.spacing = .verticalTeamSpacing
+        stack.spacing = .spacing12
         stack.distribution = .fillEqually
 
         return stack
@@ -58,8 +58,8 @@ final class OpponentsView: UIView {
     private let versusLabel: UILabel = {
         let label = UILabel()
         label.text = "vs"
-        label.textColor = .versus
-        label.font = .versus
+        label.textColor = .grayColor
+        label.font = .robotoRegular12
 
         return label
     }()
@@ -68,7 +68,7 @@ final class OpponentsView: UIView {
         let stack = UIStackView(arrangedSubviews: [secondTeamImage, secondTeamLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
-        stack.spacing = .verticalTeamSpacing
+        stack.spacing = .spacing12
         stack.distribution = .fillEqually
 
         return stack
@@ -78,7 +78,7 @@ final class OpponentsView: UIView {
         let stack = UIStackView(arrangedSubviews: [firstTeamStack, versusLabel, secondTeamStack])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.spacing = .horizontalOpponenSpacing
+        stack.spacing = .spacing24
         stack.distribution = .equalCentering
 
         return stack
@@ -90,14 +90,14 @@ final class OpponentsView: UIView {
         setUpConstraints()
     }
 
-    func configureView(with viewModel: OpponentsViewModel) {
-        let firstTeamImageURL = URL(string: viewModel.firstTeamImage)
-        let secondTeamImageURL = URL(string: viewModel.secondTeamImage)
+    func configureViewWith(_ opponent: Opponents) {
+        let firstTeamImageURL = URL(string: opponent.firstTeamImage)
+        let secondTeamImageURL = URL(string: opponent.secondTeamImage)
         firstTeamImage.kf.setImage(with: firstTeamImageURL, placeholder: UIImage(named: "placeholder"))
         secondTeamImage.kf.setImage(with: secondTeamImageURL, placeholder: UIImage(named: "placeholder"))
 
-        firstTeamLabel.text = viewModel.firstTeamLabel
-        secondTeamLabel.text = viewModel.secondTeamLabel
+        firstTeamLabel.text = opponent.firstTeamLabel
+        secondTeamLabel.text = opponent.secondTeamLabel
     }
 
     @available(*, unavailable)
@@ -115,11 +115,11 @@ final class OpponentsView: UIView {
             opponentsStack.topAnchor.constraint(equalTo: topAnchor),
             opponentsStack.bottomAnchor.constraint(equalTo: bottomAnchor),
 
-            firstTeamImage.widthAnchor.constraint(equalToConstant: .widthTeamImage),
-            firstTeamImage.heightAnchor.constraint(equalToConstant: .heightTeamImage),
+            firstTeamImage.widthAnchor.constraint(equalToConstant: .spacing60),
+            firstTeamImage.heightAnchor.constraint(equalToConstant: .spacing60),
 
-            secondTeamImage.widthAnchor.constraint(equalToConstant: .widthTeamImage),
-            secondTeamImage.heightAnchor.constraint(equalToConstant: .heightTeamImage),
+            secondTeamImage.widthAnchor.constraint(equalToConstant: .spacing60),
+            secondTeamImage.heightAnchor.constraint(equalToConstant: .spacing60),
         ])
     }
 }

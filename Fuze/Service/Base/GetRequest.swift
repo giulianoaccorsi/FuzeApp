@@ -18,7 +18,12 @@ final class GetRequest: GetRequestable {
         self.session = session
     }
 
-    func get<T>(urlString: String, queryItems: [URLQueryItem]?, httpMethod: HTTPMethod, parser: T.Type) async throws -> T where T : Decodable {
+    func get<T>(
+        urlString: String,
+        queryItems: [URLQueryItem]?,
+        httpMethod: HTTPMethod,
+        parser: T.Type
+    ) async throws -> T where T : Decodable {
         var url = URLComponents(string: urlString)
 
         if let queryItems {
@@ -26,14 +31,13 @@ final class GetRequest: GetRequestable {
         }
 
         guard let url = url?.url else { throw ServiceError.badURL }
-
+        
         do {
             let (data, response) = try await session.data(from: url)
 
             guard let response = response as? HTTPURLResponse else {
                 throw ServiceError.noResponse
             }
-
             switch response.statusCode {
             case 200...299:
                 let decodedResponse = try JSONDecoder().decode(T.self, from: data)

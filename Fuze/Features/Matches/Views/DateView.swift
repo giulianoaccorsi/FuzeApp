@@ -25,8 +25,8 @@ final class DateView: UIView {
 
     private let dateTextLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .title
-        label.font = .dateView
+        label.textColor = .labels
+        label.font = .robotoRegular8
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
@@ -47,13 +47,13 @@ final class DateView: UIView {
     func configure(with type: TypeView, text: String = "") {
         switch type {
         case .running:
-            backgroundView.backgroundColor = .backgroundCellRed
+            backgroundView.backgroundColor = .lightRed
             dateTextLabel.text = .running
         case .notStarted:
-            backgroundView.backgroundColor = .backgroundCellGray
+            backgroundView.backgroundColor = .lightGray
             dateTextLabel.text = text
         case .other:
-            backgroundView.backgroundColor = .backgroundCellGray
+            backgroundView.backgroundColor = .lightGray
             dateTextLabel.text = text
         }
     }

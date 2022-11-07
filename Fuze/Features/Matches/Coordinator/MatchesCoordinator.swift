@@ -7,7 +7,11 @@
 
 import UIKit
 
-class MatchesCoordinator: Coordinator {
+protocol MatchesCoordinatorLogic: AnyObject {
+    func tappedDetail(matchDetail: MatchDetail)
+}
+
+final class MatchesCoordinator: Coordinator, MatchesCoordinatorLogic {
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
@@ -21,9 +25,11 @@ class MatchesCoordinator: Coordinator {
         navigationController.pushViewController(matchViewController, animated: true)
     }
 
-    func tappedDetail(match: MatchCellViewModel) {
-        let detailCoordinator = MatchDetailCoordinator(navigationController: navigationController,
-                                                       match: match)
+    func tappedDetail(matchDetail: MatchDetail) {
+        let detailCoordinator = MatchDetailCoordinator(
+            navigationController: navigationController,
+            match: matchDetail
+        )
         detailCoordinator.start()
     }
 }

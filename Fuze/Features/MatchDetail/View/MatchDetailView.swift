@@ -7,28 +7,27 @@
 
 import UIKit
 
-protocol MatchDetailViewProtocol: UIView {
+protocol MatchDetailViewLogic: UIView {
     var delegate: MatchDetailViewDelegate? { get set }
     func updateView(_ matches: [MatchDetailCellViewModel],
                     leagueName: String,
                     matchDate: String,
-                    opponents: OpponentsViewModel)
+                    opponents: Opponents)
 }
 
 protocol MatchDetailViewDelegate: AnyObject {
     func tappedBackButton()
 }
 
-final class MatchDetailView: UIView, MatchDetailViewProtocol {
-
+final class MatchDetailView: UIView, MatchDetailViewLogic {
     var delegate: MatchDetailViewDelegate?
 
-    private lazy var indicatorView: UIActivityIndicatorView = {
+    private let indicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .large)
-      view.color = .white
-      view.startAnimating()
-      view.translatesAutoresizingMaskIntoConstraints = false
-      return view
+        view.color = .white
+        view.startAnimating()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
 
     private let backButton: UIButton = {
@@ -41,9 +40,9 @@ final class MatchDetailView: UIView, MatchDetailViewProtocol {
 
     private let matchName: UILabel = {
         let label = UILabel()
-        label.textColor = .title
+        label.textColor = .labels
         label.numberOfLines = 2
-        label.font = .matchNameDetail
+        label.font = .robotoMedium18
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
@@ -59,8 +58,8 @@ final class MatchDetailView: UIView, MatchDetailViewProtocol {
 
     private let dateName: UILabel = {
         let label = UILabel()
-        label.textColor = .title
-        label.font = .matchDateDetail
+        label.textColor = .labels
+        label.font = .robotoBold12
         label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
 
@@ -93,18 +92,21 @@ final class MatchDetailView: UIView, MatchDetailViewProtocol {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateView(_ matches: [MatchDetailCellViewModel],
-                    leagueName: String,
-                    matchDate: String,
-                    opponents: OpponentsViewModel) {
+    func updateView(
+        _ matches: [MatchDetailCellViewModel],
+        leagueName: String,
+        matchDate: String,
+        opponents: Opponents
+    ) {
         dateName.text = matchDate
-        opponentsView.configureView(with: opponents)
+        opponentsView.configureViewWith(opponents)
         matchName.text = leagueName
         dataSource.players = matches
         showUI()
     }
 
-    @objc private func tappedButton() {
+    @objc
+    private func tappedButton() {
         delegate?.tappedBackButton()
     }
 
@@ -130,26 +132,26 @@ final class MatchDetailView: UIView, MatchDetailViewProtocol {
             indicatorView.centerXAnchor.constraint(equalTo: centerXAnchor),
             indicatorView.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 34),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 29),
-            backButton.widthAnchor.constraint(equalToConstant: 40),
-            backButton.heightAnchor.constraint(equalToConstant: 40),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: .spacing34),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: .spacing28),
+            backButton.widthAnchor.constraint(equalToConstant: .spacing40),
+            backButton.heightAnchor.constraint(equalToConstant: .spacing40),
 
             matchName.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
-            matchName.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: 16),
-            matchName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            matchName.leadingAnchor.constraint(equalTo: backButton.trailingAnchor, constant: .spacing16),
+            matchName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -.spacing8),
 
-            opponentsView.topAnchor.constraint(equalTo: matchName.bottomAnchor, constant: 24),
+            opponentsView.topAnchor.constraint(equalTo: matchName.bottomAnchor, constant: .spacing24),
             opponentsView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            opponentsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 93),
-            opponentsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -93),
+            opponentsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: .spacing92),
+            opponentsView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -.spacing92),
 
-            dateName.topAnchor.constraint(equalTo: opponentsView.bottomAnchor, constant: 20),
+            dateName.topAnchor.constraint(equalTo: opponentsView.bottomAnchor, constant: .spacing20),
             dateName.centerXAnchor.constraint(equalTo: opponentsView.centerXAnchor),
 
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: dateName.bottomAnchor, constant: 24),
+            tableView.topAnchor.constraint(equalTo: dateName.bottomAnchor, constant: .spacing24),
             tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
         ])
     }

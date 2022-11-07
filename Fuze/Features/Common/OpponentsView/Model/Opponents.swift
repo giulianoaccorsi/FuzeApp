@@ -6,7 +6,7 @@
 //
 
 import Foundation
-final class OpponentsViewModel {
+final class Opponents {
     let firstTeamImage: String
     let firstTeamLabel: String
     let secondTeamImage: String

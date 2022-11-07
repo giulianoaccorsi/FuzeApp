@@ -8,18 +8,20 @@
 import UIKit
 
 protocol MatchDetailViewControllerDisplayable: AnyObject {
-    func displayMatches(matches: [MatchDetailCellViewModel], leagueName: String, matchDate: String, opponents: OpponentsViewModel)
+    func displayMatches(matches: [MatchDetailCellViewModel], leagueName: String, matchDate: String, opponents: Opponents)
     func displayError(error: ServiceError)
 }
 
-class MatchDetailViewController: UIViewController {
-    private let matchDetailView: MatchDetailViewProtocol
-    private let viewModel: MatchDetailViewModel
-    private let coordinator: MatchDetailCoordinator
+final class MatchDetailViewController: UIViewController {
+    private let matchDetailView: MatchDetailViewLogic
+    private let viewModel: MatchDetailViewModelLogic
+    private let coordinator: MatchDetailCoordinatorLogic
 
-    init(matchDetailView: MatchDetailViewProtocol,
-         viewModel: MatchDetailViewModel,
-         coordinator: MatchDetailCoordinator) {
+    init(
+        matchDetailView: MatchDetailViewLogic,
+        viewModel: MatchDetailViewModelLogic,
+        coordinator: MatchDetailCoordinatorLogic
+    ) {
         self.matchDetailView = matchDetailView
         self.viewModel = viewModel
         self.coordinator = coordinator
@@ -43,7 +45,7 @@ class MatchDetailViewController: UIViewController {
     }
 
     func setupUI() {
-        view.backgroundColor = .backgroundViewColor
+        view.backgroundColor = .darkBlue
     }
 }
 
@@ -51,7 +53,6 @@ extension MatchDetailViewController: MatchDetailViewDelegate {
     func tappedBackButton() {
         coordinator.back()
     }
-
 }
 
 extension MatchDetailViewController: MatchDetailViewControllerDisplayable {
@@ -59,7 +60,7 @@ extension MatchDetailViewController: MatchDetailViewControllerDisplayable {
         //
     }
 
-    func displayMatches(matches: [MatchDetailCellViewModel], leagueName: String, matchDate: String, opponents: OpponentsViewModel) {
+    func displayMatches(matches: [MatchDetailCellViewModel], leagueName: String, matchDate: String, opponents: Opponents) {
         DispatchQueue.main.async {
             self.matchDetailView.updateView(matches, leagueName: leagueName, matchDate: matchDate, opponents: opponents)
         }

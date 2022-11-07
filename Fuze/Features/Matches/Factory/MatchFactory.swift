@@ -8,14 +8,16 @@
 import Foundation
 
 enum MatchFactory {
-    static func make(coordinator: MatchesCoordinator) -> MatchesViewController {
+    static func make(coordinator: MatchesCoordinatorLogic) -> MatchesViewController {
         let matchesView = MatchesView()
         let viewModel = MatchesViewModel()
-        let viewController = MatchesViewController(matchesView: matchesView,
-                                                   viewModel: viewModel,
-                                                   coordinator: coordinator)
+        let viewController = MatchesViewController(
+            matchesView: matchesView,
+            viewModel: viewModel,
+            coordinator: coordinator
+        )
         viewModel.display = viewController
-
+        
         return viewController
     }
 }

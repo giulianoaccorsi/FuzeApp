@@ -8,7 +8,7 @@
 import UIKit
 
 final class LoadingTableViewCell: UITableViewCell {
-    private lazy var indicatorView: UIActivityIndicatorView = {
+    private let indicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .medium)
       view.color = .white
       view.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +19,7 @@ final class LoadingTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         buildViewHierarchy()
         setUpConstraints()
-        backgroundColor = .clear
+        setUpAdditionalConfiguration()
     }
 
     func startLoading() {
@@ -44,5 +44,9 @@ final class LoadingTableViewCell: UITableViewCell {
             indicatorView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             indicatorView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
         ])
+    }
+
+    private func setUpAdditionalConfiguration() {
+        backgroundColor = .clear
     }
 }

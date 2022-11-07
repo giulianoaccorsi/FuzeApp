@@ -13,14 +13,16 @@ protocol MatchesViewControllerDisplayable: AnyObject {
     func displayMoreMatches(matches: [MatchCellViewModel])
 }
 
-class MatchesViewController: UIViewController {
-    private let matchesView: MatchesViewProtocol
-    private let viewModel: MatchesViewModel
-    private let coordinator: MatchesCoordinator
+final class MatchesViewController: UIViewController {
+    private let matchesView: MatchesViewLogic
+    private let viewModel: MatchesViewModelLogic
+    private let coordinator: MatchesCoordinatorLogic
 
-    init(matchesView: MatchesViewProtocol,
-         viewModel: MatchesViewModel,
-         coordinator: MatchesCoordinator) {
+    init(
+        matchesView: MatchesViewLogic,
+        viewModel: MatchesViewModelLogic,
+        coordinator: MatchesCoordinatorLogic
+    ) {
         self.matchesView = matchesView
         self.viewModel = viewModel
         self.coordinator = coordinator
@@ -44,7 +46,7 @@ class MatchesViewController: UIViewController {
     }
 
     private func setupUI() {
-        view.backgroundColor = .backgroundViewColor
+        view.backgroundColor = .darkBlue
         self.title = "Partidas"
     }
 }
@@ -67,7 +69,7 @@ extension MatchesViewController: MatchesViewDelegate {
         viewModel.loadMoreMatches()
     }
 
-    func didTappedMatch(match: MatchCellViewModel) {
-        coordinator.tappedDetail(match: match)
+    func didTappedMatch(match: MatchDetail) {
+        coordinator.tappedDetail(matchDetail: match)
     }
 }

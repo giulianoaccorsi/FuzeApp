@@ -11,7 +11,7 @@ import Kingfisher
 final class MatchTableViewCell: UITableViewCell {
     private let divisorUIView: UIView = {
         let divisor = UIView()
-        divisor.backgroundColor = .divisorView
+        divisor.backgroundColor = .white.withAlphaComponent(0.2)
         divisor.translatesAutoresizingMaskIntoConstraints = false
 
         return divisor
@@ -26,8 +26,8 @@ final class MatchTableViewCell: UITableViewCell {
 
     private let matchNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .league
-        label.font = .league
+        label.textColor = .labels
+        label.font = .robotoRegular8
         label.adjustsFontSizeToFitWidth = true
 
         return label
@@ -42,15 +42,15 @@ final class MatchTableViewCell: UITableViewCell {
 
     private let backgroundUIView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = .backgroundViewCornerRadius
+        view.layer.cornerRadius = .spacing16
         view.clipsToBounds = true
-        view.backgroundColor = .backgroundCell
+        view.backgroundColor = .lightBlue
         view.translatesAutoresizingMaskIntoConstraints = false
 
         return view
     }()
 
-    private lazy var opponentsView: OpponentsView = {
+    private let opponentsView: OpponentsView = {
         let view = OpponentsView()
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -61,7 +61,7 @@ final class MatchTableViewCell: UITableViewCell {
         let stack = UIStackView(arrangedSubviews: [leagueImageView, matchNameLabel])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.spacing = .horizontalLeagueSpacing
+        stack.spacing = .spacing8
         stack.alignment = .leading
 
         return stack
@@ -81,7 +81,7 @@ final class MatchTableViewCell: UITableViewCell {
 
     func configure(with viewModel: MatchCellViewModel) {
         leagueImageView.kf.setImage(with: viewModel.leagueImageUrl, placeholder: viewModel.imagePlaceHolder)
-        opponentsView.configureView(with: viewModel.opponentViewModel)
+        opponentsView.configureViewWith(viewModel.opponents)
         matchNameLabel.text = viewModel.matchName
         dateView.configure(with: viewModel.status, text: viewModel.matchDate)
     }
@@ -96,26 +96,26 @@ final class MatchTableViewCell: UITableViewCell {
 
     private func setUpConstraints() {
         NSLayoutConstraint.activate([
-            backgroundUIView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .horizontalLarge),
-            backgroundUIView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.horizontalLarge),
-            backgroundUIView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .verticalLarge),
+            backgroundUIView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: .spacing24),
+            backgroundUIView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -.spacing24),
+            backgroundUIView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: .spacing24),
             backgroundUIView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
-            leagueStack.bottomAnchor.constraint(equalTo: backgroundUIView.bottomAnchor, constant: -.verticalSmall),
-            leagueStack.leadingAnchor.constraint(equalTo: backgroundUIView.leadingAnchor, constant: .horizontal),
-            leagueStack.trailingAnchor.constraint(equalTo: backgroundUIView.trailingAnchor, constant: -.horizontal),
+            leagueStack.bottomAnchor.constraint(equalTo: backgroundUIView.bottomAnchor, constant: -.spacing8),
+            leagueStack.leadingAnchor.constraint(equalTo: backgroundUIView.leadingAnchor, constant: .spacing16),
+            leagueStack.trailingAnchor.constraint(equalTo: backgroundUIView.trailingAnchor, constant: -.spacing16),
 
-            leagueImageView.widthAnchor.constraint(equalToConstant: .widthLeagueImage),
-            leagueImageView.heightAnchor.constraint(equalToConstant: .heightLeagueImage),
+            leagueImageView.widthAnchor.constraint(equalToConstant: .spacing16),
+            leagueImageView.heightAnchor.constraint(equalToConstant: .spacing16),
 
             matchNameLabel.centerYAnchor.constraint(equalTo: leagueImageView.centerYAnchor),
 
             divisorUIView.leadingAnchor.constraint(equalTo: backgroundUIView.leadingAnchor),
             divisorUIView.trailingAnchor.constraint(equalTo: backgroundUIView.trailingAnchor),
-            divisorUIView.heightAnchor.constraint(equalToConstant: .divisorHeight),
-            divisorUIView.bottomAnchor.constraint(equalTo: leagueStack.topAnchor, constant: -.verticalSmall),
+            divisorUIView.heightAnchor.constraint(equalToConstant: .spacing1),
+            divisorUIView.bottomAnchor.constraint(equalTo: leagueStack.topAnchor, constant: -.spacing8),
 
-            opponentsView.bottomAnchor.constraint(equalTo: divisorUIView.topAnchor, constant: -.vertical),
+            opponentsView.bottomAnchor.constraint(equalTo: divisorUIView.topAnchor, constant: -.spacing16),
             opponentsView.centerYAnchor.constraint(equalTo: backgroundUIView.centerYAnchor),
             opponentsView.centerXAnchor.constraint(equalTo: backgroundUIView.centerXAnchor),
 

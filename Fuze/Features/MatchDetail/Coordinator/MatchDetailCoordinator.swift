@@ -7,24 +7,24 @@
 
 import UIKit
 
-class MatchDetailCoordinator: Coordinator {
+protocol MatchDetailCoordinatorLogic: AnyObject {
+    func back()
+}
+
+final class MatchDetailCoordinator: Coordinator, MatchDetailCoordinatorLogic {
     var navigationController: UINavigationController
-    private let match: MatchCellViewModel
+    private let matchDetail: MatchDetail
 
     init(navigationController: UINavigationController,
-         match: MatchCellViewModel) {
+         match: MatchDetail) {
         self.navigationController = navigationController
-        self.match = match
+        self.matchDetail = match
     }
 
     func start() {
         let detailViewController = MatchDetailFactory.make(
             coordinator: self,
-            firstTeam: match.firstTeamID,
-            secondTeam: match.secondTeamID,
-            matchName: match.matchName,
-            dateName: match.matchDate,
-            opponents: match.opponentViewModel
+            matchDetail: matchDetail
         )
         navigationController.isNavigationBarHidden = true
         navigationController.pushViewController(detailViewController, animated: true)

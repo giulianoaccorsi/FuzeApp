@@ -7,21 +7,19 @@
 
 import UIKit
 
-protocol MatchesViewProtocol: UIView {
+protocol MatchesViewLogic: UIView {
     var delegate: MatchesViewDelegate? { get set }
     func updateMatches(_ matches: [MatchCellViewModel])
     func loadMoreMatches(_ matches: [MatchCellViewModel])
 }
 
 protocol MatchesViewDelegate: AnyObject {
-    func didTappedMatch(match: MatchCellViewModel)
+    func didTappedMatch(match: MatchDetail)
     func loadMoreMatches()
 }
 
-final class MatchesView: UIView, MatchesViewProtocol {
-    weak var delegate: MatchesViewDelegate?
-
-    lazy var indicatorView: UIActivityIndicatorView = {
+final class MatchesView: UIView, MatchesViewLogic {
+    private let indicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: .large)
       view.color = .white
       view.startAnimating()
@@ -38,6 +36,7 @@ final class MatchesView: UIView, MatchesViewProtocol {
     }()
 
     private var dataSource = MatchesDataSource()
+    weak var delegate: MatchesViewDelegate?
    
     init() {
         super.init(frame: .zero)
@@ -93,7 +92,7 @@ extension MatchesView: MatchesDataSourceDelegate {
         dataSource.isLoading = true
     }
 
-    func didTappedMatch(match: MatchCellViewModel) {
-        delegate?.didTappedMatch(match: match)
+    func didTappedMatch(matchDetail: MatchDetail) {
+        delegate?.didTappedMatch(match: matchDetail)
     }
 }

@@ -8,5 +8,10 @@
 import Foundation
 
 protocol GetRequestable {
-    func get<T: Decodable> (urlString: String, queryItems: [URLQueryItem]?, httpMethod: HTTPMethod, parser: T.Type) async throws -> T
+    func get<T: Decodable> (
+        urlString: String,
+        queryItems: [URLQueryItem]?,
+        httpMethod: HTTPMethod,
+        parser: T.Type
+    ) async throws -> T
 }

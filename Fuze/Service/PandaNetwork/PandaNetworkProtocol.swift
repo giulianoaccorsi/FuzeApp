@@ -9,5 +9,7 @@ import Foundation
 protocol PandaNetworkProtocol {
     func fetchAllMatchs(pageIndex: Int) async throws -> [Match]
     func fetchMoreMatches(pageIndex: Int) async throws -> [Match]
-    func fetchAllPlayers(firstTeamID: String, secondTeamID: String) async throws -> (first: [Player], second: [Player])
+    func fetchAllPlayers(
+        firstTeamID: String,
+        secondTeamID: String) async throws -> (first: [Player], second: [Player])
 }

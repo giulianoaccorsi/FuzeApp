@@ -8,22 +8,13 @@
 import Foundation
 
 enum MatchDetailFactory {
-    static func make(coordinator: MatchDetailCoordinator,
-                     firstTeam: String,
-                     secondTeam: String,
-                     matchName: String,
-                     dateName: String,
-                     opponents: OpponentsViewModel) -> MatchDetailViewController {
+    static func make(
+        coordinator: MatchDetailCoordinatorLogic,
+        matchDetail: MatchDetail
+    ) -> MatchDetailViewController {
 
         let matchesView = MatchDetailView()
-
-        let viewModel = MatchDetailViewModel(
-            firstTeam: firstTeam,
-            secondTeam: secondTeam,
-            matchName: matchName,
-            dateName: dateName,
-            opponents: opponents
-        )
+        let viewModel = MatchDetailViewModel(matchDetail: matchDetail)
         let viewController = MatchDetailViewController(
             matchDetailView: matchesView,
             viewModel: viewModel,

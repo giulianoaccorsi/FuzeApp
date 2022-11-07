@@ -7,20 +7,25 @@
 
 import Foundation
 
-protocol MatchesViewControllerLogic {
+protocol MatchesViewModelLogic {
     func loadRunningMatches()
+    func loadMoreMatches()
 }
 
-final class MatchesViewModel {
+final class MatchesViewModel: MatchesViewModelLogic {
     weak var display: MatchesViewControllerDisplayable?
     private let service: PandaNetworkProtocol
     private var pageIndex: Int = 1
     private var isLoading = false
-
-    init(service: PandaNetworkProtocol = PandaNetwork(getRequest: GetRequest())) {
+    
+    init(
+        service: PandaNetworkProtocol = PandaNetwork(
+            getRequest: GetRequest()
+        )   
+    ) {
         self.service = service
     }
-
+    
     func loadRunningMatches() {
         Task {
             do {
@@ -31,7 +36,7 @@ final class MatchesViewModel {
             }
         }
     }
-
+    
     func loadMoreMatches() {
         pageIndex += 1
         if !isLoading {
@@ -40,19 +45,21 @@ final class MatchesViewModel {
                 do {
                     let matches = try await service.fetchMoreMatches(pageIndex: pageIndex)
                     isLoading = false
-                    self.display?.displayMoreMatches(matches: converterToMatchCellViewModel(matches: matches))
+                    self.display?.displayMoreMatches(
+                        matches: converterToMatchCellViewModel(matches: matches)
+                    )
                 } catch let error as ServiceError {
                     self.display?.displayError(error: error)
                 }
             }
         }
     }
-
+    
     private func converterToMatchCellViewModel(matches: [Match]) -> [MatchCellViewModel] {
         let viewModels: [MatchCellViewModel] = matches.map { match in
             return MatchCellViewModel(match: match)
         }
-
+        
         return viewModels
     }
 }

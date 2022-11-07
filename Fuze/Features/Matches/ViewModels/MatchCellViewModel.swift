@@ -48,12 +48,13 @@ final class MatchCellViewModel {
         return match.opponents.count == 2 ? match.opponents[1].opponent.name ?? "" : ""
     }
 
-    var opponentViewModel: OpponentsViewModel {
-        return OpponentsViewModel(
+    var opponents: Opponents{
+        return Opponents(
             firstTeamImage: firstTeamImage,
             firstTeamLabel: firstTeamLabel,
             secondTeamImage: secondTeamImage,
-            secondTeamLabel: secondTeamLabel)
+            secondTeamLabel: secondTeamLabel
+        )
     }
 
     var leagueImageView: String {

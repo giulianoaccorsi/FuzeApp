@@ -11,8 +11,8 @@ import Kingfisher
 final class MatchDetailTableViewCell: UITableViewCell {
     private let backgroundFirstView: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = .backgroundViewCornerRadius
-        view.backgroundColor = .backgroundCell
+        view.layer.cornerRadius = .spacing16
+        view.backgroundColor = .lightBlue
         view.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -21,10 +21,10 @@ final class MatchDetailTableViewCell: UITableViewCell {
 
     private let namePlayerLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .title
+        label.textColor = .labels
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
-        label.font = .nameCellLabel
+        label.font = .robotoRegular12
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
@@ -32,9 +32,9 @@ final class MatchDetailTableViewCell: UITableViewCell {
 
     private let nickPlayerLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .title
+        label.textColor = .labels
         label.textAlignment = .center
-        label.font = .nickCellLabel
+        label.font = .robotoBold14
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
@@ -42,7 +42,7 @@ final class MatchDetailTableViewCell: UITableViewCell {
 
     private let playerImageView: UIImageView = {
         let image = UIImageView()
-        image.layer.cornerRadius = .imageViewPlayerCellCornerRadius
+        image.layer.cornerRadius = .spacing8
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
 
@@ -51,8 +51,8 @@ final class MatchDetailTableViewCell: UITableViewCell {
 
     private let backgroundSecondView: UIView = {
         let view = UIView()
-        view.backgroundColor = .backgroundCell
-        view.layer.cornerRadius = .backgroundViewCornerRadius
+        view.backgroundColor = .lightBlue
+        view.layer.cornerRadius = .spacing16
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
         view.translatesAutoresizingMaskIntoConstraints = false
 
@@ -61,10 +61,10 @@ final class MatchDetailTableViewCell: UITableViewCell {
 
     private let nameSecondPlayerLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .title
+        label.textColor = .labels
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
-        label.font = .nameCellLabel
+        label.font = .robotoRegular12
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
@@ -72,9 +72,9 @@ final class MatchDetailTableViewCell: UITableViewCell {
 
     private let nickSecondPlayerLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .title
+        label.textColor = .labels
         label.textAlignment = .center
-        label.font = .nickCellLabel
+        label.font = .robotoBold14
         label.translatesAutoresizingMaskIntoConstraints = false
 
         return label
@@ -82,7 +82,7 @@ final class MatchDetailTableViewCell: UITableViewCell {
 
     private let playerSecondImageView: UIImageView = {
         let image = UIImageView()
-        image.layer.cornerRadius = .imageViewPlayerCellCornerRadius
+        image.layer.cornerRadius = .spacing8
         image.contentMode = .scaleToFill
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -94,7 +94,7 @@ final class MatchDetailTableViewCell: UITableViewCell {
         let stack = UIStackView(arrangedSubviews: [backgroundFirstView, backgroundSecondView])
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .horizontal
-        stack.spacing = .horizontalCellDetailSpacing
+        stack.spacing = .spacing12
         stack.distribution = .fillEqually
 
         return stack
@@ -116,8 +116,6 @@ final class MatchDetailTableViewCell: UITableViewCell {
         nickPlayerLabel.text = viewModel.nickPlayerLabel
         namePlayerLabel.text = viewModel.namePlayerLabel
         playerImageView.kf.setImage(with: viewModel.playerImageView, placeholder: viewModel.placeHolder)
-
-
         playerSecondImageView.kf.setImage(with: viewModel.playerSecondImageView, placeholder: viewModel.placeHolder)
         nickSecondPlayerLabel.text = viewModel.nickSecondPlayerLabel
         nameSecondPlayerLabel.text = viewModel.nameSecondPlayerLabel
@@ -138,37 +136,37 @@ final class MatchDetailTableViewCell: UITableViewCell {
 
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -.spacing16),
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor),
 
-            playerImageView.widthAnchor.constraint(equalToConstant: 50),
-            playerImageView.heightAnchor.constraint(equalToConstant: 50),
+            playerImageView.widthAnchor.constraint(equalToConstant: .spacing50),
+            playerImageView.heightAnchor.constraint(equalToConstant: .spacing50),
             playerImageView.topAnchor.constraint(equalTo: backgroundFirstView.topAnchor),
-            playerImageView.trailingAnchor.constraint(equalTo: backgroundFirstView.trailingAnchor, constant: -12),
+            playerImageView.trailingAnchor.constraint(equalTo: backgroundFirstView.trailingAnchor, constant: -.spacing12),
 
             nickPlayerLabel.centerYAnchor.constraint(equalTo: playerImageView.centerYAnchor),
-            nickPlayerLabel.trailingAnchor.constraint(equalTo: playerImageView.leadingAnchor, constant: -16),
-            nickPlayerLabel.leadingAnchor.constraint(equalTo: backgroundFirstView.leadingAnchor, constant: 4),
+            nickPlayerLabel.trailingAnchor.constraint(equalTo: playerImageView.leadingAnchor, constant: -.spacing16),
+            nickPlayerLabel.leadingAnchor.constraint(equalTo: backgroundFirstView.leadingAnchor, constant: .spacing4),
 
-            namePlayerLabel.topAnchor.constraint(equalTo: nickPlayerLabel.bottomAnchor, constant: 8),
-            namePlayerLabel.bottomAnchor.constraint(equalTo: backgroundFirstView.bottomAnchor, constant: -8),
+            namePlayerLabel.topAnchor.constraint(equalTo: nickPlayerLabel.bottomAnchor, constant: .spacing8),
+            namePlayerLabel.bottomAnchor.constraint(equalTo: backgroundFirstView.bottomAnchor, constant: -.spacing8),
             namePlayerLabel.trailingAnchor.constraint(equalTo: nickPlayerLabel.trailingAnchor),
             namePlayerLabel.leadingAnchor.constraint(equalTo: nickPlayerLabel.leadingAnchor),
 
-            playerSecondImageView.widthAnchor.constraint(equalToConstant: 50),
-            playerSecondImageView.heightAnchor.constraint(equalToConstant: 50),
+            playerSecondImageView.widthAnchor.constraint(equalToConstant: .spacing50),
+            playerSecondImageView.heightAnchor.constraint(equalToConstant: .spacing50),
             playerSecondImageView.topAnchor.constraint(equalTo: backgroundSecondView.topAnchor),
-            playerSecondImageView.leadingAnchor.constraint(equalTo: backgroundSecondView.leadingAnchor, constant: 12),
+            playerSecondImageView.leadingAnchor.constraint(equalTo: backgroundSecondView.leadingAnchor, constant: .spacing12),
 
             nickSecondPlayerLabel.centerYAnchor.constraint(equalTo: playerSecondImageView.centerYAnchor),
-            nickSecondPlayerLabel.leadingAnchor.constraint(equalTo: playerSecondImageView.trailingAnchor, constant: 16),
-            nickSecondPlayerLabel.trailingAnchor.constraint(equalTo: backgroundSecondView.trailingAnchor, constant: -4),
+            nickSecondPlayerLabel.leadingAnchor.constraint(equalTo: playerSecondImageView.trailingAnchor, constant: .spacing16),
+            nickSecondPlayerLabel.trailingAnchor.constraint(equalTo: backgroundSecondView.trailingAnchor, constant: -.spacing4),
 
-            nameSecondPlayerLabel.topAnchor.constraint(equalTo: nickSecondPlayerLabel.bottomAnchor, constant: 8),
+            nameSecondPlayerLabel.topAnchor.constraint(equalTo: nickSecondPlayerLabel.bottomAnchor, constant: .spacing8),
             nameSecondPlayerLabel.trailingAnchor.constraint(equalTo: nickSecondPlayerLabel.trailingAnchor),
             nameSecondPlayerLabel.leadingAnchor.constraint(equalTo: nickSecondPlayerLabel.leadingAnchor),
-            nameSecondPlayerLabel.bottomAnchor.constraint(equalTo: backgroundSecondView.bottomAnchor, constant: -8),
+            nameSecondPlayerLabel.bottomAnchor.constraint(equalTo: backgroundSecondView.bottomAnchor, constant: -.spacing8),
 
         ])
     }
