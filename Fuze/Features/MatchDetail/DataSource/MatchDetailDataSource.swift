@@ -25,7 +25,10 @@ final class MatchDetailDataSource: NSObject {
     }
 
     private func registerCell() {
-        self.tableView?.register(MatchDetailTableViewCell.self, forCellReuseIdentifier: MatchDetailTableViewCell.description())
+        self.tableView?.register(
+            MatchDetailTableViewCell.self,
+            forCellReuseIdentifier: MatchDetailTableViewCell.description()
+        )
     }
 
     private func setupDataSource() {
@@ -44,7 +47,13 @@ extension MatchDetailDataSource: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: MatchDetailTableViewCell = tableView.dequeueReusableCell(withIdentifier: MatchDetailTableViewCell.description(), for: indexPath) as? MatchDetailTableViewCell else { return UITableViewCell() }
+        guard let cell: MatchDetailTableViewCell = tableView.dequeueReusableCell(
+            withIdentifier: MatchDetailTableViewCell.description(),
+            for: indexPath
+        ) as? MatchDetailTableViewCell
+        else {
+            return UITableViewCell()
+        }
         cell.configure(with: players[indexPath.row])
 
         return cell

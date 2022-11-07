@@ -8,7 +8,10 @@
 import UIKit
 
 protocol MatchDetailViewControllerDisplayable: AnyObject {
-    func displayMatches(matches: [MatchDetailCellViewModel], leagueName: String, matchDate: String, opponents: Opponents)
+    func displayMatches(matches: [MatchDetailCellViewModel],
+                        leagueName: String,
+                        matchDate: String,
+                        opponents: Opponents)
     func displayError(error: ServiceError)
 }
 
@@ -61,9 +64,19 @@ extension MatchDetailViewController: MatchDetailViewControllerDisplayable {
         matchDetailView.stopLoading()
     }
 
-    func displayMatches(matches: [MatchDetailCellViewModel], leagueName: String, matchDate: String, opponents: Opponents) {
+    func displayMatches(
+        matches: [MatchDetailCellViewModel],
+        leagueName: String,
+        matchDate: String,
+        opponents: Opponents
+    ) {
         DispatchQueue.main.async {
-            self.matchDetailView.updateView(matches, leagueName: leagueName, matchDate: matchDate, opponents: opponents)
+            self.matchDetailView.updateView(
+                matches,
+                leagueName: leagueName,
+                matchDate: matchDate,
+                opponents: opponents
+            )
         }
     }
 }

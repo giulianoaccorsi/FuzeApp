@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MatchesCoordinatorLogic: AnyObject {
-    func tappedDetail(matchDetail: MatchDetail)
+    func showDetail(matchDetail: MatchDetail)
 }
 
 final class MatchesCoordinator: Coordinator, MatchesCoordinatorLogic {
@@ -25,7 +25,7 @@ final class MatchesCoordinator: Coordinator, MatchesCoordinatorLogic {
         navigationController.pushViewController(matchViewController, animated: true)
     }
 
-    func tappedDetail(matchDetail: MatchDetail) {
+    func showDetail(matchDetail: MatchDetail) {
         let detailCoordinator = MatchDetailCoordinator(
             navigationController: navigationController,
             match: matchDetail

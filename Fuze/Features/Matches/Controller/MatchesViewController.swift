@@ -71,6 +71,6 @@ extension MatchesViewController: MatchesViewDelegate {
     }
 
     func didTappedMatch(match: MatchDetail) {
-        coordinator.tappedDetail(matchDetail: match)
+        coordinator.showDetail(matchDetail: match)
     }
 }

@@ -11,5 +11,6 @@ protocol PandaNetworkProtocol {
     func fetchMoreMatches(pageIndex: Int) async throws -> [Match]
     func fetchAllPlayers(
         firstTeamID: String,
-        secondTeamID: String) async throws -> (first: [Player], second: [Player])
+        secondTeamID: String
+    ) async throws -> (first: [Player], second: [Player])
 }

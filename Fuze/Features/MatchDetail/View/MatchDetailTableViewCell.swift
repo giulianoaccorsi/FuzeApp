@@ -133,7 +133,6 @@ final class MatchDetailTableViewCell: UITableViewCell {
     }
 
     private func setUpConstraints() {
-
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -.spacing16),
