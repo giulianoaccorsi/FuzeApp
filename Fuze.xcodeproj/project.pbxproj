@@ -18,9 +18,6 @@
 		193DDA4A2910AF3F00A35FA0 /* MatchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DDA492910AF3F00A35FA0 /* MatchesViewController.swift */; };
 		193DDA4F2910AF4000A35FA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 193DDA4E2910AF4000A35FA0 /* Assets.xcassets */; };
 		193DDA522910AF4000A35FA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193DDA502910AF4000A35FA0 /* LaunchScreen.storyboard */; };
-		193DDA5D2910AF4100A35FA0 /* FuzeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DDA5C2910AF4100A35FA0 /* FuzeTests.swift */; };
-		193DDA672910AF4100A35FA0 /* FuzeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DDA662910AF4100A35FA0 /* FuzeUITests.swift */; };
-		193DDA692910AF4100A35FA0 /* FuzeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DDA682910AF4100A35FA0 /* FuzeUITestsLaunchTests.swift */; };
 		193DDA7C2910B1BC00A35FA0 /* GetRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DDA7B2910B1BC00A35FA0 /* GetRequestable.swift */; };
 		193DDA7E2910B1D200A35FA0 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DDA7D2910B1D200A35FA0 /* ServiceError.swift */; };
 		193DDA802910B1F300A35FA0 /* GetRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DDA7F2910B1F300A35FA0 /* GetRequest.swift */; };
@@ -52,34 +49,9 @@
 		199B1A65291350F800312416 /* Opponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199B1A64291350F800312416 /* Opponents.swift */; };
 		199DC48E291560AE00B1A107 /* MatchDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199DC48D291560AE00B1A107 /* MatchDetailCellViewModel.swift */; };
 		19E9F9A92918212900E4345D /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9F9A82918212900E4345D /* LoadingTableViewCell.swift */; };
-		19E9F9AF2918533400E4345D /* PandaNetworkSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9F9AE2918533400E4345D /* PandaNetworkSpy.swift */; };
-		19E9F9B12918535400E4345D /* PandaNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9F9B02918535400E4345D /* PandaNetworkTests.swift */; };
-		19E9F9B42918552200E4345D /* Fixture+Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9F9B32918552200E4345D /* Fixture+Match.swift */; };
-		19E9F9B6291855AC00E4345D /* Fixture+League.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9F9B5291855AC00E4345D /* Fixture+League.swift */; };
-		19E9F9B8291855E500E4345D /* Fixture+Serie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9F9B7291855E500E4345D /* Fixture+Serie.swift */; };
-		19E9F9BA2918563200E4345D /* Fixture+Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9F9B92918563200E4345D /* Fixture+Team.swift */; };
-		19E9F9BC2918569B00E4345D /* Fixture+Teams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9F9BB2918569B00E4345D /* Fixture+Teams.swift */; };
-		19E9F9BE2918576700E4345D /* Fixture+Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E9F9BD2918576700E4345D /* Fixture+Player.swift */; };
 		19FA44232911576A0007BABE /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA44222911576A0007BABE /* DateView.swift */; };
 		19FA442929117B240007BABE /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 19FA442829117B240007BABE /* Roboto-Regular.ttf */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		193DDA592910AF4100A35FA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 193DDA3A2910AF3F00A35FA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 193DDA412910AF3F00A35FA0;
-			remoteInfo = Fuze;
-		};
-		193DDA632910AF4100A35FA0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 193DDA3A2910AF3F00A35FA0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 193DDA412910AF3F00A35FA0;
-			remoteInfo = Fuze;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1910285829142E3300ED4511 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
@@ -95,11 +67,6 @@
 		193DDA4E2910AF4000A35FA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		193DDA512910AF4000A35FA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		193DDA532910AF4000A35FA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		193DDA582910AF4100A35FA0 /* FuzeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FuzeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		193DDA5C2910AF4100A35FA0 /* FuzeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeTests.swift; sourceTree = "<group>"; };
-		193DDA622910AF4100A35FA0 /* FuzeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FuzeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		193DDA662910AF4100A35FA0 /* FuzeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeUITests.swift; sourceTree = "<group>"; };
-		193DDA682910AF4100A35FA0 /* FuzeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		193DDA7B2910B1BC00A35FA0 /* GetRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequestable.swift; sourceTree = "<group>"; };
 		193DDA7D2910B1D200A35FA0 /* ServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		193DDA7F2910B1F300A35FA0 /* GetRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRequest.swift; sourceTree = "<group>"; };
@@ -132,14 +99,6 @@
 		199B1A64291350F800312416 /* Opponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opponents.swift; sourceTree = "<group>"; };
 		199DC48D291560AE00B1A107 /* MatchDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailCellViewModel.swift; sourceTree = "<group>"; };
 		19E9F9A82918212900E4345D /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
-		19E9F9AE2918533400E4345D /* PandaNetworkSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaNetworkSpy.swift; sourceTree = "<group>"; };
-		19E9F9B02918535400E4345D /* PandaNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PandaNetworkTests.swift; sourceTree = "<group>"; };
-		19E9F9B32918552200E4345D /* Fixture+Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fixture+Match.swift"; sourceTree = "<group>"; };
-		19E9F9B5291855AC00E4345D /* Fixture+League.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fixture+League.swift"; sourceTree = "<group>"; };
-		19E9F9B7291855E500E4345D /* Fixture+Serie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fixture+Serie.swift"; sourceTree = "<group>"; };
-		19E9F9B92918563200E4345D /* Fixture+Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fixture+Team.swift"; sourceTree = "<group>"; };
-		19E9F9BB2918569B00E4345D /* Fixture+Teams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fixture+Teams.swift"; sourceTree = "<group>"; };
-		19E9F9BD2918576700E4345D /* Fixture+Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fixture+Player.swift"; sourceTree = "<group>"; };
 		19FA44222911576A0007BABE /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		19FA442829117B240007BABE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,20 +109,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				193DDA9E2910C63800A35FA0 /* Kingfisher in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		193DDA552910AF4100A35FA0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		193DDA5F2910AF4100A35FA0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,8 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				193DDA442910AF3F00A35FA0 /* Fuze */,
-				193DDA5B2910AF4100A35FA0 /* FuzeTests */,
-				193DDA652910AF4100A35FA0 /* FuzeUITests */,
 				193DDA432910AF3F00A35FA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -226,8 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				193DDA422910AF3F00A35FA0 /* Fuze.app */,
-				193DDA582910AF4100A35FA0 /* FuzeTests.xctest */,
-				193DDA622910AF4100A35FA0 /* FuzeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,26 +183,6 @@
 				193DDA532910AF4000A35FA0 /* Info.plist */,
 			);
 			path = Fuze;
-			sourceTree = "<group>";
-		};
-		193DDA5B2910AF4100A35FA0 /* FuzeTests */ = {
-			isa = PBXGroup;
-			children = (
-				19E9F9B22918551800E4345D /* Fixture */,
-				19E9F9AD2918532600E4345D /* Doubles */,
-				19E9F9AC2918530300E4345D /* Service */,
-				193DDA5C2910AF4100A35FA0 /* FuzeTests.swift */,
-			);
-			path = FuzeTests;
-			sourceTree = "<group>";
-		};
-		193DDA652910AF4100A35FA0 /* FuzeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				193DDA662910AF4100A35FA0 /* FuzeUITests.swift */,
-				193DDA682910AF4100A35FA0 /* FuzeUITestsLaunchTests.swift */,
-			);
-			path = FuzeUITests;
 			sourceTree = "<group>";
 		};
 		193DDA752910B13E00A35FA0 /* Main */ = {
@@ -525,35 +446,6 @@
 			path = OpponentsView;
 			sourceTree = "<group>";
 		};
-		19E9F9AC2918530300E4345D /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				19E9F9B02918535400E4345D /* PandaNetworkTests.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		19E9F9AD2918532600E4345D /* Doubles */ = {
-			isa = PBXGroup;
-			children = (
-				19E9F9AE2918533400E4345D /* PandaNetworkSpy.swift */,
-			);
-			path = Doubles;
-			sourceTree = "<group>";
-		};
-		19E9F9B22918551800E4345D /* Fixture */ = {
-			isa = PBXGroup;
-			children = (
-				19E9F9B32918552200E4345D /* Fixture+Match.swift */,
-				19E9F9B5291855AC00E4345D /* Fixture+League.swift */,
-				19E9F9B7291855E500E4345D /* Fixture+Serie.swift */,
-				19E9F9B92918563200E4345D /* Fixture+Team.swift */,
-				19E9F9BB2918569B00E4345D /* Fixture+Teams.swift */,
-				19E9F9BD2918576700E4345D /* Fixture+Player.swift */,
-			);
-			path = Fixture;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -577,42 +469,6 @@
 			productReference = 193DDA422910AF3F00A35FA0 /* Fuze.app */;
 			productType = "com.apple.product-type.application";
 		};
-		193DDA572910AF4100A35FA0 /* FuzeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 193DDA6F2910AF4100A35FA0 /* Build configuration list for PBXNativeTarget "FuzeTests" */;
-			buildPhases = (
-				193DDA542910AF4100A35FA0 /* Sources */,
-				193DDA552910AF4100A35FA0 /* Frameworks */,
-				193DDA562910AF4100A35FA0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				193DDA5A2910AF4100A35FA0 /* PBXTargetDependency */,
-			);
-			name = FuzeTests;
-			productName = FuzeTests;
-			productReference = 193DDA582910AF4100A35FA0 /* FuzeTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		193DDA612910AF4100A35FA0 /* FuzeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 193DDA722910AF4100A35FA0 /* Build configuration list for PBXNativeTarget "FuzeUITests" */;
-			buildPhases = (
-				193DDA5E2910AF4100A35FA0 /* Sources */,
-				193DDA5F2910AF4100A35FA0 /* Frameworks */,
-				193DDA602910AF4100A35FA0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				193DDA642910AF4100A35FA0 /* PBXTargetDependency */,
-			);
-			name = FuzeUITests;
-			productName = FuzeUITests;
-			productReference = 193DDA622910AF4100A35FA0 /* FuzeUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -625,14 +481,6 @@
 				TargetAttributes = {
 					193DDA412910AF3F00A35FA0 = {
 						CreatedOnToolsVersion = 14.0.1;
-					};
-					193DDA572910AF4100A35FA0 = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 193DDA412910AF3F00A35FA0;
-					};
-					193DDA612910AF4100A35FA0 = {
-						CreatedOnToolsVersion = 14.0.1;
-						TestTargetID = 193DDA412910AF3F00A35FA0;
 					};
 				};
 			};
@@ -654,8 +502,6 @@
 			projectRoot = "";
 			targets = (
 				193DDA412910AF3F00A35FA0 /* Fuze */,
-				193DDA572910AF4100A35FA0 /* FuzeTests */,
-				193DDA612910AF4100A35FA0 /* FuzeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -671,20 +517,6 @@
 				1980A1C02911BB30002A2362 /* Localizable.strings in Resources */,
 				193DDA522910AF4000A35FA0 /* LaunchScreen.storyboard in Resources */,
 				193DDA4F2910AF4000A35FA0 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		193DDA562910AF4100A35FA0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		193DDA602910AF4100A35FA0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,45 +567,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		193DDA542910AF4100A35FA0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19E9F9BE2918576700E4345D /* Fixture+Player.swift in Sources */,
-				193DDA5D2910AF4100A35FA0 /* FuzeTests.swift in Sources */,
-				19E9F9B6291855AC00E4345D /* Fixture+League.swift in Sources */,
-				19E9F9BC2918569B00E4345D /* Fixture+Teams.swift in Sources */,
-				19E9F9BA2918563200E4345D /* Fixture+Team.swift in Sources */,
-				19E9F9B42918552200E4345D /* Fixture+Match.swift in Sources */,
-				19E9F9AF2918533400E4345D /* PandaNetworkSpy.swift in Sources */,
-				19E9F9B8291855E500E4345D /* Fixture+Serie.swift in Sources */,
-				19E9F9B12918535400E4345D /* PandaNetworkTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		193DDA5E2910AF4100A35FA0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				193DDA692910AF4100A35FA0 /* FuzeUITestsLaunchTests.swift in Sources */,
-				193DDA672910AF4100A35FA0 /* FuzeUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		193DDA5A2910AF4100A35FA0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 193DDA412910AF3F00A35FA0 /* Fuze */;
-			targetProxy = 193DDA592910AF4100A35FA0 /* PBXContainerItemProxy */;
-		};
-		193DDA642910AF4100A35FA0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 193DDA412910AF3F00A35FA0 /* Fuze */;
-			targetProxy = 193DDA632910AF4100A35FA0 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		193DDA502910AF4000A35FA0 /* LaunchScreen.storyboard */ = {
@@ -971,96 +765,6 @@
 			};
 			name = Release;
 		};
-		193DDA702910AF4100A35FA0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.giulianoAccorsi.FuzeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fuze.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fuze";
-			};
-			name = Debug;
-		};
-		193DDA712910AF4100A35FA0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=macosx*]" = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.giulianoAccorsi.FuzeTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fuze.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fuze";
-			};
-			name = Release;
-		};
-		193DDA732910AF4100A35FA0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.giulianoAccorsi.FuzeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Fuze;
-			};
-			name = Debug;
-		};
-		193DDA742910AF4100A35FA0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.giulianoAccorsi.FuzeUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Fuze;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1078,24 +782,6 @@
 			buildConfigurations = (
 				193DDA6D2910AF4100A35FA0 /* Debug */,
 				193DDA6E2910AF4100A35FA0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		193DDA6F2910AF4100A35FA0 /* Build configuration list for PBXNativeTarget "FuzeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				193DDA702910AF4100A35FA0 /* Debug */,
-				193DDA712910AF4100A35FA0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		193DDA722910AF4100A35FA0 /* Build configuration list for PBXNativeTarget "FuzeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				193DDA732910AF4100A35FA0 /* Debug */,
-				193DDA742910AF4100A35FA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
